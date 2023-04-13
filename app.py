@@ -6,7 +6,7 @@ import pandas as pd
 import streamlit as st
 
 model = pickle.load(open('final_model.pkl', 'rb'))
-X_holdout = pd.read_csv('holdout.csv', index_col=0).reset_index()
+X_holdout = pd.read_csv('holdout.csv', index_col=0).reset_index(drop=True)
 holdout_indices = X_holdout.index.to_list()
 st.title("Food Insecurity Identification")
 html_temp = """
